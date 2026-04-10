@@ -23,6 +23,8 @@ public class PenguinController : MonoBehaviour
     public AudioSource exitWater;
     public AudioSource iceSkating;
     private bool gameStarted = false;
+    private bool hasFinished = false;
+    public GameObject youWinScreen;
     void Start()
     {
         airTime = Time.time;
@@ -105,6 +107,16 @@ public class PenguinController : MonoBehaviour
             splash.Play();
             swim.Play();
         }
+        else if (other.CompareTag("Finish"))
+        {
+            //Stops horizontal movement, audio, and shows win screen (when created and hooked up))
+            hasFinished = true;
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); //Leaves vertical movment free so penguin hits ground
+            iceSkating.Stop();
+            swim.Stop();
+            youWinScreen.SetActive(true);
+            
+        }
     }
     
     void OnTriggerExit2D(Collider2D other)
@@ -134,6 +146,11 @@ public class PenguinController : MonoBehaviour
             // play different animations based on success of landing
             animator.SetBool("isGliding", false);
             currentState = PenguinState.Sliding;
+        }
+        if(collision.gameObject.CompareTag("Ice") && hasFinished)
+        {
+            rb.bodyType = RigidbodyType2D.Static;
+            animator.SetTrigger("hasWon");
         }
     }
 
