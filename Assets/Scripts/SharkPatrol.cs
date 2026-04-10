@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SharkPatrol : MonoBehaviour
 {
-    [Header("Patrol")]
     public float speed = 3f;
     public float patrolDistance = 5f; // distance left and right from start
 
@@ -34,6 +33,15 @@ public class SharkPatrol : MonoBehaviour
         {
             movingRight = true;
             sr.flipX = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Handle player collision (e.g., damage, game over)
+            Debug.Log("Shark hit the player!");
         }
     }
 }

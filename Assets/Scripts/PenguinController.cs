@@ -21,7 +21,8 @@ public class PenguinController : MonoBehaviour
     public AudioSource splash;
     public AudioSource swim;
     public AudioSource exitWater;
-
+    public AudioSource iceSkating;
+    private bool gameStarted = false;
     void Start()
     {
         airTime = Time.time;
@@ -35,6 +36,7 @@ public class PenguinController : MonoBehaviour
         {
             currentState = PenguinState.Gliding;
             animator.SetBool("isGliding", true);
+            iceSkating.Stop();
         }
 
         if (currentState == PenguinState.Sliding)
@@ -54,7 +56,6 @@ public class PenguinController : MonoBehaviour
     //Called when in land
     void HandleSliding()
     {
-
         float smoothedX = Mathf.SmoothDamp(rb.linearVelocity.x, speed, ref xVelocityRef, smoothTime);
         rb.linearVelocity = new Vector2(smoothedX, rb.linearVelocity.y);
         //Vector2 currentVelocity = rb.linearVelocity;
@@ -100,6 +101,7 @@ public class PenguinController : MonoBehaviour
             currentState = PenguinState.Swimming;
             animator.SetBool("isSwimming", true);
             animator.SetBool("isGliding", false);
+            iceSkating.Stop();
             splash.Play();
             swim.Play();
         }
@@ -140,6 +142,16 @@ public class PenguinController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ice"))
         {
             airTime = Time.time;
+
+            if(currentState == PenguinState.Sliding && !iceSkating.isPlaying && gameStarted)
+            {
+                iceSkating.Play();
+            }
         }
+    }
+
+    public void StartGame()
+    {
+        gameStarted = true;
     }
 }
