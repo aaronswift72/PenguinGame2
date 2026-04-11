@@ -13836,11 +13836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8953918449746535815, guid: 2b608853af98d4846bf5f5fc175bb97c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.61
+      value: 2.7664416
       objectReference: {fileID: 0}
     - target: {fileID: 8953918449746535815, guid: 2b608853af98d4846bf5f5fc175bb97c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.25
+      value: -3.1143327
       objectReference: {fileID: 0}
     - target: {fileID: 8953918449746535815, guid: 2b608853af98d4846bf5f5fc175bb97c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19831,11 +19831,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 804862825891073079, guid: 3055ddba08ec94935a6864e0c7e4289b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.18
+      value: -0.9638251
       objectReference: {fileID: 0}
     - target: {fileID: 804862825891073079, guid: 3055ddba08ec94935a6864e0c7e4289b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.22
+      value: -3.1920466
       objectReference: {fileID: 0}
     - target: {fileID: 804862825891073079, guid: 3055ddba08ec94935a6864e0c7e4289b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20700,7 +20700,6 @@ RectTransform:
   - {fileID: 1618896082}
   - {fileID: 1653594660}
   - {fileID: 1697457872}
-  - {fileID: 1660712380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -21475,13 +21474,13 @@ MonoBehaviour:
   swimSpeed: 4
   rb: {fileID: 1186817619}
   fishCounter: {fileID: 1697457873}
-  timer: {fileID: 1653594662}
+  timer: {fileID: 0}
   currentState: 0
   splash: {fileID: 1419960394}
   swim: {fileID: 192566118}
   exitWater: {fileID: 667948977}
   iceSkating: {fileID: 1991237508}
-  youWinScreen: {fileID: 1660712379}
+  youWinScreen: {fileID: 0}
 --- !u!58 &1186817618
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -22301,7 +22300,7 @@ GameObject:
   - component: {fileID: 1653594662}
   - component: {fileID: 1653594661}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22440,41 +22439,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653594659}
   m_CullTransparentMesh: 1
---- !u!1 &1660712379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1660712380}
-  m_Layer: 5
-  m_Name: Win UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1660712380
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660712379}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 669791015}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1697457871
 GameObject:
   m_ObjectHideFlags: 0
@@ -23364,11 +23328,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4429887726420002136, guid: 2279fb169460b462b9f457b286258229, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.08
+      value: 1.0256503
       objectReference: {fileID: 0}
     - target: {fileID: 4429887726420002136, guid: 2279fb169460b462b9f457b286258229, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.27
+      value: -3.2075891
       objectReference: {fileID: 0}
     - target: {fileID: 4429887726420002136, guid: 2279fb169460b462b9f457b286258229, type: 3}
       propertyPath: m_LocalPosition.z

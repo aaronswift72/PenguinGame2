@@ -1,3 +1,5 @@
+using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +16,9 @@ public class PenguinController : MonoBehaviour
     public Rigidbody2D rb;
     private float xVelocityRef = 0;
     private float airTime;
+    private float fishCount = 0;
+    public TextMeshProUGUI fishCounter;
+    public TextMeshProUGUI timer;
 
     public enum PenguinState {Sliding, Swimming, Gliding}
     public PenguinState currentState = PenguinState.Sliding;
@@ -114,8 +119,17 @@ public class PenguinController : MonoBehaviour
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); //Leaves vertical movment free so penguin hits ground
             iceSkating.Stop();
             swim.Stop();
+            GameObject stats = youWinScreen.transform.Find("Stats text").gameObject;
+            stats.GetComponent<TextMeshProUGUI>().SetText("You caught " + fishCount + " fish!");
+            timer.GetComponent<TimerBehavior>().stopped = true;
             youWinScreen.SetActive(true);
             
+        }
+        else if (other.CompareTag("Fish"))
+        {
+            other.GetComponent<Animator>().SetTrigger("fishCollect");
+            fishCount++;
+            fishCounter.SetText("Fish: " + fishCount);
         }
     }
     
