@@ -122,8 +122,8 @@ public class PenguinController : MonoBehaviour
             GameObject stats = youWinScreen.transform.Find("Stats text").gameObject;
             stats.GetComponent<TextMeshProUGUI>().SetText("You caught " + fishCount + " fish!");
             timer.GetComponent<TimerBehavior>().stopped = true;
+            fishCounter.gameObject.SetActive(false);
             youWinScreen.SetActive(true);
-            
         }
         else if (other.CompareTag("Fish"))
         {

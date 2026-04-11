@@ -10,7 +10,7 @@ public class TimerBehavior : MonoBehaviour
 
     void Update() 
     {
-        while (!stopped)
+        if (!stopped)
         {
             elapsedTime += Time.deltaTime;
             TimeSpan time = TimeSpan.FromSeconds(elapsedTime);
