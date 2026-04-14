@@ -19,6 +19,7 @@ public class PenguinController : MonoBehaviour
     private float fishCount = 0;
     public TextMeshProUGUI fishCounter;
     public TextMeshProUGUI timer;
+    public GameObject panel;
 
     public enum PenguinState {Sliding, Swimming, Gliding}
     public PenguinState currentState = PenguinState.Sliding;
@@ -114,16 +115,7 @@ public class PenguinController : MonoBehaviour
         }
         else if (other.CompareTag("Finish"))
         {
-            //Stops horizontal movement, audio, and shows win screen (when created and hooked up))
-            hasFinished = true;
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); //Leaves vertical movment free so penguin hits ground
-            iceSkating.Stop();
-            swim.Stop();
-            GameObject stats = youWinScreen.transform.Find("Stats text").gameObject;
-            stats.GetComponent<TextMeshProUGUI>().SetText("You caught " + fishCount + " fish!");
-            timer.GetComponent<TimerBehavior>().stopped = true;
-            fishCounter.gameObject.SetActive(false);
-            youWinScreen.SetActive(true);
+            EndGame();
         }
         else if (other.CompareTag("Fish"))
         {
@@ -184,5 +176,20 @@ public class PenguinController : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
+    }
+    public void EndGame()
+    {
+        //Stops horizontal movement, audio, and shows win screen (when created and hooked up))
+        hasFinished = true;
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); //Leaves vertical movment free so penguin hits ground
+        iceSkating.Stop();
+        swim.Stop();
+        GameObject stats = youWinScreen.transform.Find("Stats text").gameObject;
+        stats.GetComponent<TextMeshProUGUI>().SetText("You caught " + fishCount + " fish\nin " + timer.gameObject.GetComponent<TextMeshProUGUI>().text);
+        timer.GetComponent<TimerBehavior>().stopped = true;
+        fishCounter.gameObject.SetActive(false);
+        timer.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false);
+        youWinScreen.SetActive(true);
     }
 }
