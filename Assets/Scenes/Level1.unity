@@ -20465,7 +20465,7 @@ GameObject:
   - component: {fileID: 572430117}
   m_Layer: 0
   m_Name: Shark (2)
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22553,7 +22553,7 @@ GameObject:
   - component: {fileID: 1190999010}
   m_Layer: 0
   m_Name: Shark
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22853,7 +22853,7 @@ GameObject:
   - component: {fileID: 1366938268}
   m_Layer: 0
   m_Name: Shark (1)
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24544,7 +24544,7 @@ GameObject:
   - component: {fileID: 1890882896}
   m_Layer: 0
   m_Name: Shark (3)
-  m_TagString: Untagged
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

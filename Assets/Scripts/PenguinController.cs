@@ -120,8 +120,15 @@ public class PenguinController : MonoBehaviour
         else if (other.CompareTag("Fish"))
         {
             other.GetComponent<Animator>().SetTrigger("fishCollect");
-            fishCount++;
-            fishCounter.SetText("Fish: " + fishCount);
+            fishCounter.SetText("Fish: " + ++fishCount);
+        }
+        if (other.CompareTag("Shark"))
+        {
+            if (fishCount > 0)
+            {
+                fishCounter.SetText("Fish: " + --fishCount);
+            }
+            animator.SetTrigger("isHurt");
         }
     }
     
